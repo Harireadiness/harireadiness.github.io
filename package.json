@@ -1,0 +1,13 @@
+{
+  "name": "hari-pulse-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HARI Pulse — build toolchain for single-file bundle",
+  "scripts": {
+    "decode": "node scripts/decode-pulse.js",
+    "build": "node scripts/build-pulse.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
