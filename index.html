@@ -11,7 +11,7 @@
 <meta name="description" content="HARI measures the human layer of AI transformation — the organisational conditions that determine whether AI investment creates real business value or stalls at the use-case level.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -285,40 +285,30 @@
   .success-msg.visible { display: block; }
 
   /* ── FOOTER ── */
+  /* ── FOOTER — The Human Layer site footer, reproduced verbatim:
+       two lockups (THL left, HARI right) and the © line. Full-bleed
+       across the page's horizontal padding. ── */
   footer {
-    padding: clamp(24px, 3vw, 36px) 0 clamp(32px, 4vw, 48px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(92, 114, 152, 0.15);
+    background: #F8F7F3;
+    font-family: 'Inter', sans-serif;
+    margin: 0 calc(-1 * clamp(24px, 6vw, 80px));
     opacity: 0;
     animation: fadeIn 1s ease forwards;
     animation-delay: 1.3s;
   }
-
-  .footer-left {
-    font-family: var(--sans);
-    font-size: 11px;
-    font-weight: 300;
-    letter-spacing: 0.06em;
-    color: rgba(240, 237, 230, 0.65);
-  }
-
-  .footer-left a {
-    color: rgba(240, 237, 230, 0.65);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .footer-left a:hover { color: rgba(240, 237, 230, 0.95); }
-
-  .footer-right {
-    font-family: var(--sans);
-    font-size: 11px;
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    color: rgba(240, 237, 230, 0.55);
-  }
+  .thl-footer-inner { width: 100%; max-width: 1180px; margin: 0 auto; padding: clamp(38px,4.5vw,56px) clamp(22px,5vw,56px) clamp(26px,3vw,34px); }
+  .thl-footer-row { display: flex; flex-wrap: wrap; gap: 26px 48px; justify-content: space-between; align-items: flex-start; }
+  .thl-footer-lockup { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .thl-footer-lockup svg { flex-shrink: 0; display: block; }
+  .thl-footer-lockup.hari { gap: 13px; }
+  .thl-footer-text { display: flex; flex-direction: column; gap: 5px; }
+  .thl-footer-lockup.hari .thl-footer-text { gap: 4px; }
+  .thl-footer-name { font-size: 14px; font-weight: 500; letter-spacing: 0.22em; color: #0D2240; }
+  .thl-footer-tag { font-size: 8.5px; font-weight: 600; letter-spacing: 0.22em; color: #5C7298; }
+  .thl-footer-lockup.hari .thl-footer-tag { font-size: 8px; letter-spacing: 0.2em; }
+  .thl-footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 11px; }
+  .thl-footer-legal { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 48px; margin: clamp(20px,2.4vw,26px) 0 0; }
+  .thl-footer-legal p { font-size: 11px; letter-spacing: 0.06em; color: #5C7298; margin: 0; }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -337,7 +327,6 @@
     .header-link { display: none; }
     .input-row { flex-direction: column; }
     .input-row button { padding: 14px; text-align: center; }
-    .footer-right { display: none; }
   }
 </style>
 </head>
@@ -393,11 +382,43 @@
   </main>
 
   <footer>
-    <div class="footer-left">
-      HARI &nbsp;·&nbsp; A product of <a href="https://thehumanlayer.io">The Human Layer</a>
-      &nbsp;·&nbsp; Ewan Clarkson, Founder
+    <div class="thl-footer-inner">
+      <div class="thl-footer-row">
+        <a class="thl-footer-lockup" href="https://thehumanlayer.io" aria-label="The Human Layer">
+          <svg width="34" height="34" viewBox="0 0 80 80" aria-hidden="true">
+            <rect x="6" y="14" width="68" height="6" fill="#0D2240" rx="1"></rect>
+            <rect x="6" y="24" width="68" height="6" fill="#0D2240" rx="1"></rect>
+            <rect x="6" y="34" width="68" height="6" fill="#0D2240" rx="1"></rect>
+            <rect x="6" y="48" width="68" height="20" fill="#5C7298" rx="2"></rect>
+          </svg>
+          <span class="thl-footer-text">
+            <span class="thl-footer-name">THE HUMAN LAYER</span>
+            <span class="thl-footer-tag">IDENTIFIED. NAMED. MEASURED.</span>
+          </span>
+        </a>
+        <div class="thl-footer-right">
+          <div class="thl-footer-lockup hari">
+            <svg width="30" height="30" viewBox="0 0 80 80" aria-hidden="true">
+              <g transform="translate(40,40)">
+                <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#7A7A6E"></ellipse>
+                <g transform="rotate(60)"><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#5C7A5C"></ellipse></g>
+                <g transform="rotate(120)"><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#5C7298"></ellipse></g>
+                <g transform="rotate(180)"><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#5C4870"></ellipse></g>
+                <g transform="rotate(240)"><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#B06040"></ellipse></g>
+                <g transform="rotate(300)"><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#8C4040"></ellipse></g>
+              </g>
+            </svg>
+            <span class="thl-footer-text">
+              <span class="thl-footer-name">HARI</span>
+              <span class="thl-footer-tag">HUMAN-AI READINESS INDEX</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thl-footer-legal">
+        <p>© 2026 The Human Layer. All rights reserved.</p>
+      </div>
     </div>
-    <div class="footer-right">© 2026 Ewan Clarkson. The Human Layer.</div>
   </footer>
 
 </div>
